@@ -12,8 +12,8 @@ const bordersByType = {
 };
 
 const backgroundByType = {
-  grass: "bg-[url('https://images.wikidexcdn.net/mwuploads/wikidex/e/e6/latest/20171001182738/EP946_Bosque_de_Melemele.png')]",
-  fire: " bg-orange-500 bg-gradient-to-b from-orange-400 to-orange-600 ",
+  grass: "bg-[url('https://pm1.narvii.com/7457/6a7795293c255f4ccc49608b3d2e1f5e3310c062r4-565-283_00.jpg')]",
+  fire: " bg-[url('https://img.freepik.com/fotos-premium/erupcion-volcanica-masiva-gran-volcan-que-arroja-lava-caliente-gases-atmosfera-3d-illustra_715271-989.jpg?w=826')]",
   water: "bg-blue-400 bg-gradient-to-b from-blue-400 to-blue-600",
   bug: "bg-green-800 bg-gradient-to-b from-green-800 to-green-500",
   normal: "bg-purple-600 bg-gradient-to-b from-purple-500 to-purple-300"
@@ -50,7 +50,7 @@ export const Pokemonid = () => {
     <section>
       <Heeader />
 
-      <section className="px-4 py-16 text-lg font-mono -mb-8">
+      <section className="px-4 py-16 text-lg font-mono -mb-8 ">
         <article className={`max-w-[800px] mx-auto shadow-lg p-2 ${backgroundCardByType[pokemon?.types[0].type.name]} `}>
           {/* Sección superior */}
 
@@ -137,9 +137,9 @@ export const Pokemonid = () => {
           </section>
         </article>
       
-        <div className="float-right -translate-y-20 -translate-x-1/2 -mb-8"> 
+        <div className="flex justify-center mt-4  -mb-8">
         <Link  to={"/pokedex/"} className="">
-        <i className='  ' >
+        <i>
         <img className="h-20 transform hover:scale-105 transition duration-150" src="https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/7ec065111e818f9.png" alt="" />
         </i>
         </Link> 

@@ -11,11 +11,11 @@ const bordersByType = {
 };
 
 const backgroundByType = {
-  grass: "bg-[url('https://pm1.narvii.com/7457/6a7795293c255f4ccc49608b3d2e1f5e3310c062r4-565-283_00.jpg')]",
-  fire: " bg-[url('https://img.freepik.com/fotos-premium/erupcion-volcanica-masiva-gran-volcan-que-arroja-lava-caliente-gases-atmosfera-3d-illustra_715271-989.jpg?w=826')]",
+  grass: "bg-green-600 bg-gradient-to-b from-teal-400 to-green-500",
+  fire: " bg-orange-500 bg-gradient-to-b from-orange-400 to-orange-600 ",
   water: "bg-blue-400 bg-gradient-to-b from-blue-400 to-blue-600",
   bug: "bg-green-800 bg-gradient-to-b from-green-800 to-green-500",
-  normal: "bg-purple-600 bg-gradient-to-b from-purple-500 to-purple-300"
+  normal: "bg-purple-600 bg-gradient-to-b from-purple-500 to-purple-300",
 };
 
 const backgroundCardByType = {
@@ -52,18 +52,16 @@ const PokemonCard = ({ pokemonUrl }) => {
   return (
     <Link
       to={`/pokedex/${pokemon?.id}`}
-      className={` shadow-xl shadow-black transform hover:scale-105 transition duration-150 text-center border-4 rounded-md capitalize max-w-sm border-gray-800 ${backgroundCardByType[pokemon?.types[0].type.name]}`}
+      className={` shadow-xl shadow-black transform hover:scale-105 transition duration-150 text-center border-4 rounded-md capitalize max-w-sm min-w-[250px]  border-gray-800 ${backgroundCardByType[pokemon?.types[0].type.name]}`}
     >
       {/*Sección superior*/}
       <section
-        className={`bg-gradient-to-b h-[180px] relative m-3 border-2  ${
+        className={`bg-gradient-to-b h-[180px] ${
           bordersByType[pokemon?.types[0].type.name]
         } ${
           backgroundByType[pokemon?.types[0].type.name]
-        } 
-        bg-cover`}
+        } relative m-3 border-2 `}
       >
-        
         <div className="absolute -bottom-6 w-[200px] left-1/2 -translate-x-1/2 ">
           <img
             src={pokemon?.sprites.other["official-artwork"].front_default}
