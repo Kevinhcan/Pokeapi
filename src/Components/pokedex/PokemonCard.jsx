@@ -11,9 +11,9 @@ const bordersByType = {
 };
 
 const backgroundByType = {
-  grass: "bg-green-600 bg-gradient-to-b from-teal-400 to-green-500",
-  fire: " bg-orange-500 bg-gradient-to-b from-orange-400 to-orange-600 ",
-  water: "bg-blue-400 bg-gradient-to-b from-blue-400 to-blue-600",
+  grass: "bg-[url('/images/Backgrounds/grass.png')]",
+  fire: " bg-[url('/images/Backgrounds/fire.avif')]",
+  water: "bg-[url('/images/Backgrounds/water.jpg')]",
   bug: "bg-green-800 bg-gradient-to-b from-green-800 to-green-500",
   normal: "bg-purple-600 bg-gradient-to-b from-purple-500 to-purple-300",
 };
@@ -52,7 +52,7 @@ const PokemonCard = ({ pokemonUrl }) => {
   return (
     <Link
       to={`/pokedex/${pokemon?.id}`}
-      className={` shadow-xl shadow-black transform hover:scale-105 transition duration-150 text-center border-4 rounded-md capitalize max-w-sm min-w-[250px]  border-gray-800 ${backgroundCardByType[pokemon?.types[0].type.name]}`}
+      className={` shadow-xl shadow-black transform hover:scale-105 transition duration-150 text-center border-2 rounded-md capitalize max-w-sm min-w-[250px]  border-gray-800 ${backgroundCardByType[pokemon?.types[0].type.name]}`}
     >
       {/*Sección superior*/}
       <section
@@ -60,7 +60,7 @@ const PokemonCard = ({ pokemonUrl }) => {
           bordersByType[pokemon?.types[0].type.name]
         } ${
           backgroundByType[pokemon?.types[0].type.name]
-        } relative m-3 border-2 `}
+        } bg-cover relative m-3 border-2 `}
       >
         <div className="absolute -bottom-6 w-[200px] left-1/2 -translate-x-1/2 ">
           <img

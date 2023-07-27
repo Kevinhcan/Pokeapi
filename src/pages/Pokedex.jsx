@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import PokemonCard from "../Components/pokedex/PokemonCard";
 
+
 const Pokedex = () => {
   const [pokemons, setPokemons] = useState([]);
   const [pokemonName, setPokemonName] = useState("");
