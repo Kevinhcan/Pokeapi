@@ -11,8 +11,8 @@ const bordersByType = {
 };
 
 const backgroundByType = {
-  grass: "bg-[url('https://images.wikidexcdn.net/mwuploads/wikidex/e/e6/latest/20171001182738/EP946_Bosque_de_Melemele.png')]",
-  fire: " bg-[url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSfXUXzI6Lrf_kufhqDzz-EN24tHxOLrxVPxuQso5bWfKIZYTo8')]",
+  grass: "bg-[url('https://pm1.narvii.com/7457/6a7795293c255f4ccc49608b3d2e1f5e3310c062r4-565-283_00.jpg')]",
+  fire: " bg-[url('https://img.freepik.com/fotos-premium/erupcion-volcanica-masiva-gran-volcan-que-arroja-lava-caliente-gases-atmosfera-3d-illustra_715271-989.jpg?w=826')]",
   water: "bg-blue-400 bg-gradient-to-b from-blue-400 to-blue-600",
   bug: "bg-green-800 bg-gradient-to-b from-green-800 to-green-500",
   normal: "bg-purple-600 bg-gradient-to-b from-purple-500 to-purple-300"
@@ -56,12 +56,14 @@ const PokemonCard = ({ pokemonUrl }) => {
     >
       {/*Sección superior*/}
       <section
-        className={`bg-gradient-to-b h-[180px] ${
+        className={`bg-gradient-to-b h-[180px] relative m-3 border-2  ${
           bordersByType[pokemon?.types[0].type.name]
         } ${
           backgroundByType[pokemon?.types[0].type.name]
-        } relative m-3 border-2 `}
+        } 
+        bg-cover`}
       >
+        
         <div className="absolute -bottom-6 w-[200px] left-1/2 -translate-x-1/2 ">
           <img
             src={pokemon?.sprites.other["official-artwork"].front_default}
