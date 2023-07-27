@@ -11,16 +11,16 @@ const bordersByType = {
 };
 
 const backgroundByType = {
-  grass: "bg-green-600 bg-gradient-to-b from-teal-400 to-green-500",
-  fire: " bg-orange-500 bg-gradient-to-b from-orange-400 to-orange-600 ",
+  grass: "bg-[url('https://images.wikidexcdn.net/mwuploads/wikidex/e/e6/latest/20171001182738/EP946_Bosque_de_Melemele.png')]",
+  fire: " bg-[url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSfXUXzI6Lrf_kufhqDzz-EN24tHxOLrxVPxuQso5bWfKIZYTo8')]",
   water: "bg-blue-400 bg-gradient-to-b from-blue-400 to-blue-600",
   bug: "bg-green-800 bg-gradient-to-b from-green-800 to-green-500",
-  normal: "bg-purple-600 bg-gradient-to-b from-purple-500 to-purple-300",
+  normal: "bg-purple-600 bg-gradient-to-b from-purple-500 to-purple-300"
 };
 
 const backgroundCardByType = {
   grass:
-    "bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-yellow-200 via-green-200 to-green-500",
+    "bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-yellow-200 via-green-200 to-green-500 ",
   fire: "bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-yellow-600 to-red-600",
   water: "bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-green-300 via-blue-500 to-purple-600",
   bug: "bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-red-500 to-green-500",
@@ -52,7 +52,7 @@ const PokemonCard = ({ pokemonUrl }) => {
   return (
     <Link
       to={`/pokedex/${pokemon?.id}`}
-      className={`transform hover:scale-105 transition duration-150 text-center border-4 rounded-md capitalize w-auto border-gray-800  ${backgroundCardByType[pokemon?.types[0].type.name]}`}
+      className={` shadow-xl shadow-black transform hover:scale-105 transition duration-150 text-center border-4 rounded-md capitalize max-w-sm border-gray-800 ${backgroundCardByType[pokemon?.types[0].type.name]}`}
     >
       {/*Sección superior*/}
       <section
@@ -75,7 +75,7 @@ const PokemonCard = ({ pokemonUrl }) => {
         <h4 className="text-xl">{types}</h4>
         <span>Type</span>
 
-        <hr />
+        
 
         <section className="grid grid-cols-3 gap-2 p-2 border-0 ">
           {pokemon?.stats.map((stat) => (

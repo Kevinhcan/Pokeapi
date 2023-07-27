@@ -12,11 +12,20 @@ const bordersByType = {
 };
 
 const backgroundByType = {
-  grass: "bg-green-600 bg-gradient-to-b from-teal-400 to-green-500",
+  grass: "bg-[url('https://images.wikidexcdn.net/mwuploads/wikidex/e/e6/latest/20171001182738/EP946_Bosque_de_Melemele.png')]",
   fire: " bg-orange-500 bg-gradient-to-b from-orange-400 to-orange-600 ",
   water: "bg-blue-400 bg-gradient-to-b from-blue-400 to-blue-600",
   bug: "bg-green-800 bg-gradient-to-b from-green-800 to-green-500",
   normal: "bg-purple-600 bg-gradient-to-b from-purple-500 to-purple-300"
+};
+
+const backgroundCardByType = {
+  grass:
+    "bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-yellow-200 via-green-200 to-green-500 ",
+  fire: "bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-yellow-600 to-red-600",
+  water: "bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-green-300 via-blue-500 to-purple-600",
+  bug: "bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-red-500 to-green-500",
+  normal: "bg-[radial-gradient(ellipse_at_left,_var(--tw-gradient-stops))] from-pink-300 via-purple-300 to-indigo-400",
 };
 
 export const Pokemonid = () => {
@@ -41,11 +50,11 @@ export const Pokemonid = () => {
     <section>
       <Heeader />
 
-      <section className="px-4 py-16 ">
-        <article className="max-w-[800px] mx-auto shadow-lg p-2">
+      <section className="px-4 py-16 text-lg font-mono -mb-8">
+        <article className={`max-w-[800px] mx-auto shadow-lg p-2 ${backgroundCardByType[pokemon?.types[0].type.name]} `}>
           {/* Sección superior */}
 
-          <section className={` relative ${backgroundByType[pokemon?.types[0].type.name]} h-[130px]`}> 
+          <section className={` relative bg-center ${backgroundByType[pokemon?.types[0].type.name]} h-[130px] border-b-2 border-black`}> 
             <div className="w-[200px] mx-auto absolute left-1/2 -translate-x-1/2 -top-16">
               <img
                 src={pokemon?.sprites.other["official-artwork"].front_default}
@@ -56,14 +65,14 @@ export const Pokemonid = () => {
 
           {/* Informacipon general */}
           <section>
-            <div>
-              <h3>#{pokemon?.id}</h3>
+            <div className="flex justify-center mt-2">
+              <h3 className="text-xl bg-black text-white rounded-full w-12 text-center p-2">#{pokemon?.id}</h3>
             </div>
 
             <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2">
-              <hr />
-              <h2 className="capitalize font-bold">{pokemon?.name}</h2>
-              <hr />
+              <hr className="border-black"/>
+              <h2 className="capitalize text-3xl font-bold">{pokemon?.name}</h2>
+              <hr className="border-black"/>
             </div>
 
             <div className="flex justify-center gap-6 text-center">
@@ -85,7 +94,7 @@ export const Pokemonid = () => {
 
               <section className="capitalize grid grid-cols-2 gap-4 mt-4">
                 {
-                  pokemon?.types.map(type => <article className="p-2 px-8 border-[1px] border-gray-300 " key={type.type.name}>{type.type.name}</article> )
+                  pokemon?.types.map(type => <article className="p-2 px-8 border-[1px] border-black " key={type.type.name}>{type.type.name}</article> )
                 }
               </section>
 
@@ -96,7 +105,7 @@ export const Pokemonid = () => {
 
               <section className="capitalize grid grid-cols-2 gap-4 mt-4">
                 {
-                  pokemon?.abilities.map(ability => <article className="p-2 px-8 border-[1px] border-gray-300 " key={ability.ability.name}>{ability.ability.name}</article> )
+                  pokemon?.abilities.map(ability => <article className="p-2 px-8 border-[1px] border-black " key={ability.ability.name}>{ability.ability.name}</article> )
                 }
               </section>
 
@@ -106,7 +115,7 @@ export const Pokemonid = () => {
 
           {/* Sección de estados */}
           <section>
-            <h3>Stats</h3>
+            <h3 className="mt-4 text-xl font-bold -mb-2 text-center">Stats</h3>
 
             <section>
               {pokemon?.stats.map((stat) => (
@@ -127,11 +136,15 @@ export const Pokemonid = () => {
             </section>
           </section>
         </article>
-        <div className="text-end -translate-x-28 -translate-y-14 -m-6"> 
+      
+        <div className="float-right -translate-y-20 -translate-x-1/2 -mb-8"> 
         <Link  to={"/pokedex/"} className="">
-        <i className=' text-5xl bx bx-skip-previous-circle' ></i> 
+        <i className='  ' >
+        <img className="h-20 transform hover:scale-105 transition duration-150" src="https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/7ec065111e818f9.png" alt="" />
+        </i>
         </Link> 
         </div>
+        
       </section>
     </section>
   );
