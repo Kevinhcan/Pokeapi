@@ -15,17 +15,17 @@ const Home = () => {
   };
 
   return (
-    <section className={` bg-fixed bg-center bg-no-repeat bg-cover min-h-screen grid grid-rows-[1fr_auto]   bg-[url("https://external-preview.redd.it/NXrR_qnMRHrwUoE8pbeiX26fq4mNctFsmdEghRVApSQ.jpg?auto=webp&s=b18e1b0df84f417036d4e1ac0affb6245a071ebf")]`}>
+    <section className={`font-mono bg-fixed bg-center bg-no-repeat bg-cover min-h-screen grid grid-rows-[1fr_auto]   bg-[url("https://external-preview.redd.it/NXrR_qnMRHrwUoE8pbeiX26fq4mNctFsmdEghRVApSQ.jpg?auto=webp&s=b18e1b0df84f417036d4e1ac0affb6245a071ebf")]`}>
       <section  className="min-h-screen flex items-center justify-center">
-        <article className="text-center text-white font-bold">
+        <article className="text-center bg-black/70 p-5 rounded-lg text-white font-bold">
           <div>
             <img src="/images/pokedex-logo.png" alt="Pokedex Image" />
           </div>
           <h2>Hello trainer!</h2>
           <p>Give me your name to start!: </p>
           <form onSubmit={handleSubmmit} className=" text-black flex justify-center mt-4">
-            <input className="px-4 py-2 border border-gray-400 rounded-md focus:outline-none focus:border-blue-500" id="nameTrainer" type="text" placeholder="Your name ..." />
-            <button className="ml-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 transition duration-400">Start!</button>
+            <input className="px-4 py-2 border border-gray-400 focus:outline-none focus:border-red-500" id="nameTrainer" type="text" placeholder="Your name ..." />
+            <button className="p-0 my-0 md:ml-0 w-full md:w-[20%] text-white bg-gradient-to-r from-red-600 via-red-500 to-red-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium text-sm px-5 py-2.5 text-center">Start!</button>
           </form>
         </article>
       </section>

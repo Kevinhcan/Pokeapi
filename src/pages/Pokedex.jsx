@@ -115,121 +115,133 @@ const Pokedex = () => {
 
   return (
     <section
-      className={`bg-fixed bg-center bg-no-repeat bg-cover font-mono min-h-screen bg-[url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a11de91a-5e1b-447c-9066-64185f3c8cbb/d7a42h1-39a19868-7cd3-47af-b557-118890a140dc.jpg/v1/fill/w_1192,h_670,q_70,strp/_updated__pokeball_wallpaper_by_rushetafan_d7a42h1-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvYTExZGU5MWEtNWUxYi00NDdjLTkwNjYtNjQxODVmM2M4Y2JiXC9kN2E0MmgxLTM5YTE5ODY4LTdjZDMtNDdhZi1iNTU3LTExODg5MGExNDBkYy5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.5XTBE-aavwhrFjzSGtQc0skSV9q26BoP7a9JAhcQfkc")]`}
+      className={`font-mono min-h-screen bg-black/10`}
     >
       <Heeader />
 
-      <section className="py-6 px-2 items-center justify-center grid gap-1">
-        <h3 className="text-white text-xl">
-          Welcome {nameTrainer}, here you can find you favorite pokemon{" "}
-        </h3>
+      <section className="py-6 mx-4 md:mx-24 gap-2 md:grid">
+  <h3 className="text-black text-xl">
+    <span className="text-red-500 font-extrabold">Welcome {nameTrainer}</span>, here you can find your favorite pokemon{" "}
+  </h3>
 
-        <form onSubmit={handleSubmmit}>
-          <div>
-            <input
-              className=" text-center jus px-4 py-1 border border-gray-400 rounded-md focus:outline-none focus:border-blue-500"
-              id="pokemonName"
-              type="text"
-              placeholder="Search your pokemon"
-            />
-            <button>Search</button>
-          </div>
+  <form className="flex flex-col md:flex-row items-start" onSubmit={handleSubmmit}>
+    <div className="w-full md:w-1/2">
+      <input
+        className="px-2 w-full md:w-[70%] py-2 shadow-md shadow-gray-500"
+        id="pokemonName"
+        type="text"
+        placeholder="Search your pokemon"
+      />
+      <button className="p-2 my-2 md:ml-0 md:my-0 w-full md:w-[20%] text-white shadow-md shadow-gray-500 bg-gradient-to-r from-red-600 via-red-500 to-red-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium text-sm px-5 py-2.5 text-center">
+      Search
+    </button>
+    </div>
 
-          <select
-            className="mt-2 rounded-sm text-center h-6 w-24 capitalize"
-            onChange={(e) => setCurrentType(e.target.value)}
-          >
-            <option value="">All</option>
-            {types.map((type) => (
-              <option value={type} key={type}>
-                {type}
-              </option>
-            ))}
-          </select>
-        </form>
-      </section>
+    
+
+    <select
+      className="cursor-pointer py-2 mt-2 md:mt-0 w-full md:w-[30%] shadow-md shadow-gray-500 rounded-sm text-center h-10 capitalize bg-white"
+      onChange={(e) => setCurrentType(e.target.value)}
+    >
+      <option value="">All</option>
+      {types.map((type) => (
+        <option
+          value={type}
+          key={type}
+          className={`${
+            currentType === type ? "bg-red-500 text-white" : ""
+          }`}
+        >
+          {type}
+        </option>
+      ))}
+    </select>
+  </form>
+</section>
+
+
 
       {/* Paginación */}
-      <ul className="flex gap-3 justify-center py-4 mt-4 px-2 flex-wrap text-xl ">
+      <ul className=" flex gap-1  md:gap-3 justify-center py-4 px-2 text-xl ">
         {/* Primera pagina */}
         <li
           onClick={() => setCurrentPage(1)}
-          className="bx bx-first-page text-2xl rounded-md p-3 bg-black font-bold text-white rounded-m cursor-pointer"
+          className=" bx bx-first-page text-2xl p-3 w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
         ></li>
         {/* Pagina anterior */}
         <li
           onClick={handleClickPreviusPage}
-          className="bx bx-caret-left text-2xl p-3 rounded-md bg-black font-bold text-white rounded-m cursor-pointer"
+          className="bx bx-caret-left text-2xl p-3 w-10 -pr-1 md:w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
         ></li>
         {/* Lista de paginas */}
         {pagesInBlock.map((numberPage) => (
           <li
-            onClick={() => {
-              setCurrentPage(numberPage);
-            }}
-            className={`p-3 bg-black font-bold text-white rounded-m cursor-pointer rounded-md ${
-              numberPage === currentPage && "bg-gray-500"
-            } `}
-            key={numberPage}
-          >
-            {numberPage}
-          </li>
+          onClick={() => {
+            setCurrentPage(numberPage);
+          }}
+          className={`p-3 bg-red-600/0 hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 font-bold text-black cursor-pointer w-12 text-center rounded-lg ${
+            numberPage === currentPage && "bg-red-600/100 text-white"
+          } `}
+          key={numberPage}
+        >
+          {numberPage}
+        </li>
         ))}
 
         {/* Pagina siguiente */}
         <li
           onClick={handleClickNextPage}
-          className="bx bx-caret-right text-2xl p-3 rounded-md bg-black font-bold text-white rounded-m cursor-pointer"
+          className="bx bx-caret-right text-2xl p-3 w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
         ></li>
         {/* Ultima pagina */}
         <li
           onClick={() => setCurrentPage(lastPage)}
-          className=" bx bx-last-page text-2xl p-3 rounded-md bg-black font-bold text-white rounded-m cursor-pointer"
+          className=" bx bx-last-page text-2xl p-3 w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
         ></li>
       </ul>
 
-      <section className="px-6 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-10 m-16 ">
+      <section className="px-6 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-10 m-16  ">
         {pokemonInPage.map((pokemon) => (
           <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url} />
         ))}
       </section>
 
       {/* Paginación */}
-      <ul className="flex gap-3 justify-center pb-8  px-2 flex-wrap text-xl ">
+      <ul className="flex gap-3 justify-center py-4 px-2 flex-wrap text-xl">
         {/* Primera pagina */}
         <li
           onClick={() => setCurrentPage(1)}
-          className="bx bx-first-page text-2xl rounded-md p-3 bg-black font-bold text-white rounded-m cursor-pointer"
+          className="bx bx-first-page text-2xl p-3 w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
         ></li>
         {/* Pagina anterior */}
         <li
           onClick={handleClickPreviusPage}
-          className="bx bx-caret-left text-2xl p-3 rounded-md bg-black font-bold text-white rounded-m cursor-pointer"
+          className="bx bx-caret-left text-2xl p-3  w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
         ></li>
         {/* Lista de paginas */}
         {pagesInBlock.map((numberPage) => (
           <li
-            onClick={() => {
-              setCurrentPage(numberPage);
-            }}
-            className={`p-3 bg-black font-bold text-white rounded-m cursor-pointer rounded-md ${
-              numberPage === currentPage && "bg-gray-500"
-            } `}
-            key={numberPage}
-          >
-            {numberPage}
-          </li>
+          onClick={() => {
+            setCurrentPage(numberPage);
+          }}
+          className={`p-3 bg-red-600/0 hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 font-bold text-black cursor-pointer w-12 text-center rounded-lg ${
+            numberPage === currentPage && "bg-red-600/100 text-white"
+          } `}
+          key={numberPage}
+        >
+          {numberPage}
+        </li>
         ))}
 
         {/* Pagina siguiente */}
         <li
           onClick={handleClickNextPage}
-          className="bx bx-caret-right text-2xl p-3 rounded-md bg-black font-bold text-white rounded-m cursor-pointer"
+          className="bx bx-caret-right text-2xl p-3 w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
         ></li>
         {/* Ultima pagina */}
         <li
           onClick={() => setCurrentPage(lastPage)}
-          className=" bx bx-last-page text-2xl p-3 rounded-md bg-black font-bold text-white rounded-m cursor-pointer"
+          className=" bx bx-last-page text-2xl p-3 w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
         ></li>
       </ul>
     </section>

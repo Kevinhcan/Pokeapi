@@ -12,23 +12,43 @@ const bordersByType = {
 };
 
 const backgroundByType = {
-  grass:
-    "bg-[url('https://pm1.narvii.com/7457/6a7795293c255f4ccc49608b3d2e1f5e3310c062r4-565-283_00.jpg')]",
-  fire: " bg-[url('https://img.freepik.com/fotos-premium/erupcion-volcanica-masiva-gran-volcan-que-arroja-lava-caliente-gases-atmosfera-3d-illustra_715271-989.jpg?w=826')]",
-  water: "bg-[url('https://territoriomovil.net/wp-content/uploads/2022/05/water-pokemon.jpg')]",
-  bug: "bg-green-800 bg-gradient-to-b from-green-800 to-green-500",
-  normal: "bg-purple-600 bg-gradient-to-b from-purple-500 to-purple-300",
+  grass: "bg-[url('/images/Backgrounds/grass.png')]",
+  fire: " bg-[url('/images/Backgrounds/fire.avif')]",
+  water: "bg-[url('/images/Backgrounds/water.jpg')]",
+  bug: "bg-[url('/images/Backgrounds/bug.png')]",
+  normal: "bg-[url('/images/Backgrounds/normal.avif')]",
+  poison: "bg-[url('/images/Backgrounds/poison.webp')]",
+  ground:"bg-[url('/images/Backgrounds/ground.webp')]",
+  electric:"bg-[url('/images/Backgrounds/electric.webp')]",
+  fairy:"bg-[url('/images/Backgrounds/fairy.webp')]",
+  fighting:"bg-[url('/images/Backgrounds/fighting.webp')]",
+  rock:"bg-[url('/images/Backgrounds/rock.png')]",
+  ghost:"bg-[url('/images/Backgrounds/ghost.webp')]",
+  steel:"bg-[url('/images/Backgrounds/steel.jpg')]",
+  psychic:"bg-[url('/images/Backgrounds/psychic.jpg')]",
+  ice:"bg-[url('/images/Backgrounds/ice.avif')]",
+  dragon:"bg-[url('/images/Backgrounds/dragon.webp')]",
+  dark:"bg-[url('/images/Backgrounds/dark.avif')]",
 };
 
 const backgroundCardByType = {
-  grass:
-    "bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-yellow-200 via-green-200 to-green-500 ",
-  fire: "bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-yellow-600 to-red-600",
-  water:
-    "bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-green-300 via-blue-500 to-purple-600",
-  bug: "bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-red-500 to-green-500",
-  normal:
-    "bg-[radial-gradient(ellipse_at_left,_var(--tw-gradient-stops))] from-pink-300 via-purple-300 to-indigo-400",
+  grass: "grass-d ",
+  fire: " fire-d",
+  water: "water-d",
+  bug: "bug-d",
+  normal:"normal-d",
+  poison: "poison-d",
+  ground:"ground-d",
+  electric:"electric-d",
+  fairy:"fairy-d",
+  fighting:"fighting-d",
+  rock:"rock-d",
+  ghost:"ghost-d",
+  steel:"steel-d",
+  psychic:"psychic-d",
+  ice:"ice-d",
+  dragon:"dragon-d",
+  dark:"dark-d",
 };
 
 export const Pokemonid = () => {
@@ -42,29 +62,49 @@ export const Pokemonid = () => {
       .get(URL)
       .then((res) => setPokemon(res.data))
       .catch((err) => console.log(err));
-  }, []);
+  }, [id]);
 
   const getPercentStatBar = (stat_base) => {
     const percentBarProgres = Math.floor((stat_base * 100) / 255);
     return `${percentBarProgres}%`;
   };
 
-  return (
-    <section>
-      <Heeader />
+  
 
-      <section className="px-4 py-16 text-lg font-mono -mb-8 ">
+  return (
+    <section className="font- bg-black/10">
+      <Heeader />
+      <div className="grid grid-flow-col h-10 mt-5 mx-5">
+      <div className=" flex justify-start">
+      <Link to={`/pokedex/${pokemon?.id - 1}`} className="">
+        
+            <button className="font-bold rounded-md text-lg p-2 my-2 text-white shadow-md shadow-gray-500 bg-gradient-to-r from-red-600 via-red-500 to-red-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-black px-5 py-2.5 text-center mr-2 mb-2">Previous</button>
+          
+        </Link>
+      </div>
+      <div className="flex justify-end">
+        <Link to={`/pokedex/${pokemon?.id + 1}`}>
+        
+            <button className="font-bold rounded-md text-lg p-2 my-2 text-white shadow-md shadow-gray-500 bg-gradient-to-r from-red-600 via-red-500 to-red-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-black px-9 py-2.5 text-center mr-2 mb-2 ">Next</button>
+          
+        </Link>
+      </div>
+      </div>     
+      
+  
+      <section className="px-4 py-16 text-lg font-mono -mb-8">
         <article
-          className={`max-w-[800px] mx-auto shadow-lg p-2 ${
+          className={`max-w-[800px] mx-auto shadow-lg p-1 transition duration-200 ${
             backgroundCardByType[pokemon?.types[0].type.name]
           } `}
         >
           {/* Sección superior */}
-
+<div className="bg-black/10 h-full">
           <section
             className={` relative ${
               backgroundByType[pokemon?.types[0].type.name]
             } bg-cover h-[130px] border-b-2 border-black`}
+            style={{ backgroundPosition: "bottom" }} 
           >
             <div className="w-[200px] mx-auto absolute left-1/2 -translate-x-1/2 -top-16">
               <img
@@ -75,16 +115,16 @@ export const Pokemonid = () => {
           </section>
 
           {/* Informacipon general */}
-          <section>
+          <section className="text-white m-2" >
             <div className="flex justify-center mt-2">
-              <h3 className="text-xl bg-black text-white rounded-full w-11 text-center p-2">
+              <h3 className="text-xl bg-black text-white rounded-full h-11 w-auto text-center p-2">
                 #{pokemon?.id}
               </h3>
             </div>
 
             <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2">
               <hr className="border-black" />
-              <h2 className="capitalize text-3xl font-bold">{pokemon?.name}</h2>
+              <h2 className=" capitalize text-3xl font-bold">{pokemon?.name}</h2>
               <hr className="border-black" />
             </div>
 
@@ -108,7 +148,7 @@ export const Pokemonid = () => {
                 <section className="capitalize grid grid-cols-2 gap-4 mt-4">
                   {pokemon?.types.map((type) => (
                     <article
-                      className="p-2 px-8 border-[1px] border-black "
+                      className="p-2 px-8 border-2 shadow-sm shadow-black bg-black/60 border-gray-700 "
                       key={type.type.name}
                     >
                       {type.type.name}
@@ -117,13 +157,13 @@ export const Pokemonid = () => {
                 </section>
               </section>
               {/* Habilidades */}
-              <section className="text-center mt-4">
+              <section className="text-center mt-4 ">
                 <h3>Abilities</h3>
 
                 <section className="capitalize grid grid-cols-2 gap-4 mt-4">
                   {pokemon?.abilities.map((ability) => (
                     <article
-                      className="p-2 px-8 border-[1px] border-black "
+                      className="p-2 px-8 shadow-sm shadow-black  border-2 bg-black/60 border-gray-700 "
                       key={ability.ability.name}
                     >
                       {ability.ability.name}
@@ -135,10 +175,10 @@ export const Pokemonid = () => {
           </section>
 
           {/* Sección de estados */}
-          <section>
+          <section className="text-white m-2">
             <h3 className="mt-4 text-xl font-bold -mb-2 text-center">Stats</h3>
 
-            <section>
+            <section className="pb-2 -mb-2">
               {pokemon?.stats.map((stat) => (
                 <article key={stat.stat.name}>
                   <section className="flex justify-between">
@@ -156,19 +196,18 @@ export const Pokemonid = () => {
               ))}
             </section>
           </section>
+          </div>
         </article>
 
         <div className="flex justify-center mt-4  -mb-8">
           <Link to={"/pokedex/"} className="">
             <i>
-              <img
-                className="h-20 transform hover:scale-105 transition duration-150"
-                src="https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/7ec065111e818f9.png"
-                alt=""
-              />
+              <button className="font-bold rounded-md text-lg p-2 my-2 text-white shadow-md shadow-gray-500 bg-gradient-to-r from-red-600 via-red-500 to-red-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 px-5 py-2.5 text-center mr-2 mb-2 ">
+                Back To PokeDex
+              </button>
             </i>
           </Link>
-        </div>
+        </div>       
       </section>
     </section>
   );

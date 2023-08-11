@@ -1,3 +1,432 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.grass {
+  background: rgb(126, 198, 197);
+  background: linear-gradient(
+    180deg,
+    rgba(126, 198, 197, 1) 0%,
+    rgba(171, 218, 198, 1) 50%,
+    rgba(202, 224, 153, 1) 100%
+  );
+}
+.fire {
+  background: rgb(227, 88, 37);
+  background: linear-gradient(
+    180deg,
+    rgba(227, 88, 37, 1) 34%,
+    rgba(232, 174, 27, 1) 100%
+  );
+}
+
+.bug {
+  background: rgb(59, 176, 57);
+  background: linear-gradient(
+    180deg,
+    rgba(59, 176, 57, 1) 0%,
+    rgba(98, 219, 96, 1) 100%
+  );
+}
+
+.poison {
+  background: rgb(91, 49, 132);
+  background: linear-gradient(
+    180deg,
+    rgba(91, 49, 132, 1) 0%,
+    rgba(165, 100, 227, 1) 62%,
+    rgba(206, 155, 255, 1) 100%
+  );
+}
+
+.ground {
+  background: rgb(101, 64, 8);
+  background: linear-gradient(
+    180deg,
+    rgba(101, 64, 8, 1) 0%,
+    rgba(137, 92, 26, 0.94859950816264) 62%,
+    rgba(214, 150, 56, 1) 100%
+  );
+}
+
+.electric {
+  background: rgb(255, 254, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 254, 0, 1) 0%,
+    rgba(255, 186, 0, 0.94859950816264) 62%,
+    rgba(189, 119, 16, 1) 100%
+  );
+}
+
+.fighting {
+  background: rgb(150, 64, 42);
+  background: linear-gradient(
+    180deg,
+    rgba(150, 64, 42, 1) 0%,
+    rgba(241, 97, 60, 0.9345939059217437) 62%,
+    rgba(203, 115, 93, 1) 100%
+  );
+}
+
+.rock {
+  background: rgb(126, 126, 126);
+  background: linear-gradient(
+    180deg,
+    rgba(126, 126, 126, 1) 0%,
+    rgba(141, 141, 148, 1) 62%,
+    rgba(211, 211, 211, 1) 100%
+  );
+}
+
+.ghost {
+  background: rgb(50, 53, 105);
+  background: linear-gradient(
+    180deg,
+    rgba(50, 53, 105, 1) 0%,
+    rgba(69, 74, 168, 1) 62%,
+    rgba(120, 125, 218, 1) 100%
+  );
+}
+
+.steel {
+  background: rgb(94, 115, 108);
+  background: linear-gradient(
+    180deg,
+    rgba(94, 115, 108, 1) 0%,
+    rgba(114, 136, 129, 1) 62%,
+    rgba(168, 168, 168, 1) 100%
+  );
+}
+
+.psychic {
+  background: rgb(229, 45, 45);
+  background: linear-gradient(
+    180deg,
+    rgba(229, 45, 45, 1) 0%,
+    rgba(209, 62, 62, 1) 62%,
+    rgba(240, 127, 127, 1) 100%
+  );
+}
+
+.ice {
+  background: rgb(111, 190, 223);
+  background: linear-gradient(
+    180deg,
+    rgba(111, 190, 223, 1) 0%,
+    rgba(100, 203, 245, 1) 62%,
+    rgba(189, 235, 254, 1) 100%
+  );
+}
+
+.dragon {
+  background: rgb(71, 138, 147);
+  background: linear-gradient(
+    180deg,
+    rgba(71, 138, 147, 1) 0%,
+    rgba(86, 164, 174, 1) 62%,
+    rgba(162, 190, 193, 1) 100%
+  );
+}
+
+.dark {
+  background: rgb(3, 7, 6);
+  background: linear-gradient(
+    180deg,
+    rgba(3, 7, 6, 1) 0%,
+    rgba(13, 18, 17, 1) 62%,
+    rgba(90, 94, 93, 1) 100%
+  );
+}
+
+/* Carta entera PokemonId */
+
+.grass-d {
+  background-image: linear-gradient(
+    to right,
+    #62db60 0%,
+    #ffe47a 51%,
+    #62db60 100%
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+}
+
+.grass-d:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.fire-d {
+  background-image: linear-gradient(
+    to right,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+}
+
+.fire-d:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.bug-d {
+  background-image: linear-gradient(
+    to right,
+    #62db60 0%,
+    #71b280 51%,
+    #62db60 100%
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+}
+
+.bug-d:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.poison-d {
+  background-image: linear-gradient(
+    to right,
+    #a564e3 0%,
+    #2e1c4b 51%,
+    #a564e3 100%
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+}
+.poison-d:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.ground-d {
+  background-image: linear-gradient(
+    to right,
+    #895c1a 0%,
+    #58370c 51%,
+    #895c1a 100%
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+}
+.ground-d:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.electric-d {
+  background-image: linear-gradient(
+    to right,
+    #ffba00 0%,
+    #ffd900 51%,
+    #ffba00 100%
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+}
+.electric-d:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.fighting-d {
+  background-image: linear-gradient(
+    to right,
+    #96402A 0%,
+    #ce7a65 51%,
+    #96402A 100%
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+}
+.fighting-d:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.rock-d {
+  background-image: linear-gradient(
+    to right,
+    #8d8d94 0%,
+    #dcdce4 51%,
+    #8d8d94 100%
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+}
+.rock-d:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.ghost-d {
+  background-image: linear-gradient(
+    to right,
+    #454aa8 0%,
+    #8285c5 51%,
+    #454aa8 100%
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+}
+.ghost-d:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.steel-d {
+  background-image: linear-gradient(
+    to right,
+    #728881 0%,
+    #bed1cb 51%,
+    #728881 100%
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+}
+.steel-d:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.psychic-d {
+  background-image: linear-gradient(
+    to right,
+    #d13e3e 0%,
+    #c76a6a 51%,
+    #d13e3e 100%
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+}
+.psychic-d:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.ice-d {
+  background-image: linear-gradient(
+    to right,
+    #64cbf5 0%,
+    #00b5fd 51%,
+    #64cbf5 100%
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+}
+.ice-d:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.dragon-d {
+  background-image: linear-gradient(
+    to right,
+    #56a4ae 0%,
+    #acd6db 51%,
+    #56a4ae 100%
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+}
+.dragon-d:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.dark-d {
+  background-image: linear-gradient(
+    to right,
+    #0d1211 0%,
+    #9ca09f 51%,
+    #0d1211 100%
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+}
+.dark-d:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.water-d {
+        background-image: linear-gradient(to right, #24C6DC 0%, #514A9D  51%, #24C6DC  100%);
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;            
+      }
+
+      .water-d:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+      }
+
+.normal-d{
+             
+    
+        background-image: linear-gradient(to right, #EC6F66 0%, #F3A183  51%, #a32a66  100%);
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;            
+
+}
+
+      .normal-d:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+      }
+
+.fairy-d{
+             
+        background-image: linear-gradient(to right, #f857a6 0%, #ff5858  51%, #f857a6  100%);
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;            
+      }
+
+      .fairy-d:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+      }
+     
+
+     
+
+
+
