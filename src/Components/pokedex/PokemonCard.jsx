@@ -98,7 +98,7 @@ const PokemonCard = ({ pokemonUrl }) => {
           backgroundByType[pokemon?.types[0].type.name]
         } bg-cover relative `}
       >
-        <div className="absolute  -bottom-6 w-[200px] left-1/2 -translate-x-1/2 ">
+        <div className="absolute -bottom-6 w-[200px] left-1/2 -translate-x-1/2 ">
           <img
             src={pokemon?.sprites.other["official-artwork"].front_default}
             alt=""

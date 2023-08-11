@@ -162,16 +162,16 @@ const Pokedex = () => {
 
 
       {/* Paginación */}
-      <ul className=" flex gap-1  md:gap-3 justify-center py-4 px-2 text-xl ">
+      <ul className=" flex gap-1 md:gap-3 justify-center py-4 px-2 text-xl ">
         {/* Primera pagina */}
         <li
           onClick={() => setCurrentPage(1)}
-          className=" bx bx-first-page text-2xl p-3 w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
+          className=" bx bx-first-page text-2xl p-3 w-10  md:w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
         ></li>
         {/* Pagina anterior */}
         <li
           onClick={handleClickPreviusPage}
-          className="bx bx-caret-left text-2xl p-3 w-10 -pr-1 md:w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
+          className="bx bx-caret-left text-2xl p-3 w-10  md:w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
         ></li>
         {/* Lista de paginas */}
         {pagesInBlock.map((numberPage) => (
@@ -179,7 +179,7 @@ const Pokedex = () => {
           onClick={() => {
             setCurrentPage(numberPage);
           }}
-          className={`p-3 bg-red-600/0 hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 font-bold text-black cursor-pointer w-12 text-center rounded-lg ${
+          className={`p-3 bg-red-600/0 hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 font-bold text-black cursor-pointer w-10  md:w-12 text-center rounded-lg ${
             numberPage === currentPage && "bg-red-600/100 text-white"
           } `}
           key={numberPage}
@@ -191,32 +191,32 @@ const Pokedex = () => {
         {/* Pagina siguiente */}
         <li
           onClick={handleClickNextPage}
-          className="bx bx-caret-right text-2xl p-3 w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
+          className="bx bx-caret-right text-2xl p-3 w-10  md:w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
         ></li>
         {/* Ultima pagina */}
         <li
           onClick={() => setCurrentPage(lastPage)}
-          className=" bx bx-last-page text-2xl p-3 w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
+          className=" bx bx-last-page text-2xl p-3 w-10  md:w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
         ></li>
       </ul>
 
-      <section className="px-6 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-10 m-16  ">
+      <section className="px-6 pl-0 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-10 m-16  ">
         {pokemonInPage.map((pokemon) => (
           <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url} />
         ))}
       </section>
 
       {/* Paginación */}
-      <ul className="flex gap-3 justify-center py-4 px-2 flex-wrap text-xl">
+      <ul className=" flex gap-1 md:gap-3 justify-center py-4 px-2 text-xl ">
         {/* Primera pagina */}
         <li
           onClick={() => setCurrentPage(1)}
-          className="bx bx-first-page text-2xl p-3 w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
+          className=" bx bx-first-page text-2xl p-3 w-10  md:w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
         ></li>
         {/* Pagina anterior */}
         <li
           onClick={handleClickPreviusPage}
-          className="bx bx-caret-left text-2xl p-3  w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
+          className="bx bx-caret-left text-2xl p-3 w-10  md:w-12 -pr-1 md:w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
         ></li>
         {/* Lista de paginas */}
         {pagesInBlock.map((numberPage) => (
@@ -224,7 +224,7 @@ const Pokedex = () => {
           onClick={() => {
             setCurrentPage(numberPage);
           }}
-          className={`p-3 bg-red-600/0 hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 font-bold text-black cursor-pointer w-12 text-center rounded-lg ${
+          className={`p-3 bg-red-600/0 hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 font-bold text-black cursor-pointer w-10  md:w-12 text-center rounded-lg ${
             numberPage === currentPage && "bg-red-600/100 text-white"
           } `}
           key={numberPage}
@@ -236,12 +236,12 @@ const Pokedex = () => {
         {/* Pagina siguiente */}
         <li
           onClick={handleClickNextPage}
-          className="bx bx-caret-right text-2xl p-3 w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
+          className="bx bx-caret-right text-2xl p-3 w-10  md:w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
         ></li>
         {/* Ultima pagina */}
         <li
           onClick={() => setCurrentPage(lastPage)}
-          className=" bx bx-last-page text-2xl p-3 w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
+          className=" bx bx-last-page text-2xl p-3 w-10  md:w-12 text-center rounded-lg hover:bg-opacity-50 hover:bg-gray-600 transition duration-200 bg-red-600 font-bold text-white rounded-m cursor-pointer"
         ></li>
       </ul>
     </section>
